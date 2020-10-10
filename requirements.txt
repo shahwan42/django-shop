@@ -1,0 +1,6 @@
+django
+Pillow
+
+black
+flake8
+flake8-black
