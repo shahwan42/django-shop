@@ -142,3 +142,6 @@ cython_debug/
 
 # local media files
 media/
+
+# static files
+staticfiles/
