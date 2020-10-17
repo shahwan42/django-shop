@@ -1,5 +1,6 @@
 django
 Pillow
+celery==4.4.2
 
 black
 flake8
