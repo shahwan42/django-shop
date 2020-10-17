@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import braintree
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -126,3 +129,15 @@ CART_SESSION_ID = "cart"
 
 # email
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = "rpj66nsdsndpr276"  # Merchant ID
+BRAINTREE_PUBLIC_KEY = "wv983ydb62ymnw8z"  # Public Key
+BRAINTREE_PRIVATE_KEY = "0750e26aa3bee1866dbb407bc4a3dcc3"  # Private key
+
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY,
+)
