@@ -1,0 +1,292 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$kwPWfLONoO26$Xjv/d2BQcboLd7UgCho9GKveMovDhZpfxPG/jplfZR4=",
+    "last_login": "2020-10-24T14:40:00.851Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "ahmed@shahwan.me",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-10-10T12:23:44.238Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 1,
+  "fields": {
+    "name": "catone",
+    "slug": "catone"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 2,
+  "fields": {
+    "name": "cattwo",
+    "slug": "cattwo"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "product one sir",
+    "slug": "product-one-sir",
+    "image": "",
+    "description": "The Rust Programming Language",
+    "price": "213.12",
+    "available": true,
+    "created": "2020-10-10T12:27:24.080Z",
+    "updated": "2020-10-10T12:27:24.080Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "product two with image",
+    "slug": "product-two-image",
+    "image": "products/2020/10/10/906bb58ae81e5132ebaf7842d96a7b34.jpg",
+    "description": "Django 3 by example is worth it",
+    "price": "123.12",
+    "available": true,
+    "created": "2020-10-10T19:36:09.831Z",
+    "updated": "2020-10-10T19:39:03.013Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "p1 without image",
+    "slug": "p1-without-image",
+    "image": "",
+    "description": "no image productt",
+    "price": "2323.32",
+    "available": true,
+    "created": "2020-10-10T19:38:08.380Z",
+    "updated": "2020-10-10T19:38:08.380Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "nice value product",
+    "slug": "nice-value-product",
+    "image": "",
+    "description": "",
+    "price": "222.00",
+    "available": true,
+    "created": "2020-10-24T18:31:33.520Z",
+    "updated": "2020-10-24T18:31:33.520Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "geniero.bas@gmail.com",
+    "address": "shiba - st. Ahmed Ben Hanbal",
+    "postal_code": "44759",
+    "city": "Zagazig",
+    "created": "2020-10-16T00:18:06.092Z",
+    "updated": "2020-10-16T00:18:06.092Z",
+    "paid": false,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "geniero.bas@gmail.com",
+    "address": "shiba - st. Ahmed Ben Hanbal",
+    "postal_code": "44759",
+    "city": "Zagazig",
+    "created": "2020-10-17T13:10:45.453Z",
+    "updated": "2020-10-17T13:10:45.453Z",
+    "paid": false,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "geniero.bas@gmail.com",
+    "address": "shiba - st. Ahmed Ben Hanbal",
+    "postal_code": "44759",
+    "city": "Zagazig",
+    "created": "2020-10-17T22:15:25.148Z",
+    "updated": "2020-10-17T22:19:01.217Z",
+    "paid": true,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "geniero.bas@gmail.com",
+    "address": "shiba - st. Ahmed Ben Hanbal",
+    "postal_code": "44759",
+    "city": "Zagazig",
+    "created": "2020-10-17T23:44:56.412Z",
+    "updated": "2020-10-17T23:47:55.601Z",
+    "paid": true,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "a.shahwan42@gmail.com",
+    "address": "2, Ahmed Ben Hanbal st. A branch of Ezzat Soud street - Shiba",
+    "postal_code": "44759",
+    "city": "Az Zaqaziq",
+    "created": "2020-10-24T18:48:37.436Z",
+    "updated": "2020-10-24T18:52:37.495Z",
+    "paid": true,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 6,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "a.shahwan42@gmail.com",
+    "address": "2, Ahmed Ben Hanbal st. A branch of Ezzat Soud street - Shiba",
+    "postal_code": "44759",
+    "city": "Az Zaqaziq",
+    "created": "2020-10-24T18:53:56.647Z",
+    "updated": "2020-10-24T18:53:56.647Z",
+    "paid": false,
+    "coupon": null,
+    "discount": 0
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 7,
+  "fields": {
+    "first_name": "Ahmed",
+    "last_name": "Shahwan",
+    "email": "a.shahwan42@gmail.com",
+    "address": "2, Ahmed Ben Hanbal st. A branch of Ezzat Soud street - Shiba",
+    "postal_code": "44759",
+    "city": "Az Zaqaziq",
+    "created": "2020-10-24T18:55:35.969Z",
+    "updated": "2020-10-24T18:55:35.969Z",
+    "paid": false,
+    "coupon": 1,
+    "discount": 50
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product": 3,
+    "price": "2323.32",
+    "quantity": 2,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 1,
+    "product": 1,
+    "price": "213.12",
+    "quantity": 5,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "product": 3,
+    "price": "2323.32",
+    "quantity": 1,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 3,
+    "product": 1,
+    "price": "213.12",
+    "quantity": 8,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 4,
+    "product": 1,
+    "price": "213.12",
+    "quantity": 3,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 6,
+  "fields": {
+    "order": 5,
+    "product": 4,
+    "price": "222.00",
+    "quantity": 1,
+    "braintree_id": ""
+  }
+},
+{
+  "model": "coupons.coupon",
+  "pk": 1,
+  "fields": {
+    "code": "123",
+    "valid_from": "2020-10-24T16:37:04Z",
+    "valid_to": "2020-10-24T23:37:08Z",
+    "discount": 50,
+    "active": true
+  }
+}
+]
