@@ -38,6 +38,16 @@ Order {{ order.id }} {{ block.super }}
       {{ order.address }}, {{ order.postal_code }} {{ order.city }}
     </td>
   </tr>
+  {% if order.coupon %}
+  <tr>
+    <th>Coupon</th>
+    <td>{{ order.coupon }}</td>
+  </tr>
+  <tr>
+    <th>Subtotal amount</th>
+    <td>${{ order.get_subtotal_cost }}</td>
+  </tr>
+  {% endif %}
   <tr>
     <th>Total amount</th>
     <td>${{ order.get_total_cost }}</td>
@@ -67,6 +77,15 @@ Order {{ order.id }} {{ block.super }}
         <td class="num">${{ item.get_cost }}</td>
       </tr>
       {% endfor %}
+      <!-- break row -->
+      <tr>
+        <td colspan="5"></td>
+      </tr>
+      {% if order.coupon %}
+      <tr class="total">
+        <td colspan="3">Subtotal</td>
+        <td class="num">${{ order.get_subtotal_cost }}</td>
+      </tr>{% endif %}
       <tr class="total">
         <td colspan="3">Total</td>
         <td class="num">${{ order.get_total_cost }}</td>

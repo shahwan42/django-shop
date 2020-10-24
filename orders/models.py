@@ -29,9 +29,13 @@ class Order(models.Model):
     def __str__(self):
         return f"Order {self.id}"
 
+    def get_subtotal_cost(self):
+        return sum(item.get_cost() for item in self.items.all())
+
     def get_total_cost(self):
-        total_cost = sum(item.get_cost() for item in self.items.all())
-        return total_cost - total_cost * (self.discount / Decimal(100))
+        return self.get_subtotal_cost() - self.get_subtotal_cost() * (
+            self.discount / Decimal(100)
+        )
 
 
 class OrderItem(models.Model):
