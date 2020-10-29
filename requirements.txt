@@ -4,7 +4,6 @@ celery==4.4.2
 flower==0.9.3
 braintree==3.59.0
 WeasyPrint==51
+django-rosetta==0.9.3
 
-black
-flake8
 flake8-black
