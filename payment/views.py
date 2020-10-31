@@ -2,6 +2,7 @@ import braintree
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from orders.models import Order
+from shop.recommender import Recommender
 from .tasks import payment_completed
 
 
@@ -33,6 +34,9 @@ def payment_process(request):
             order.save()
             # launch asynchronous task
             payment_completed.delay(order.id)
+            # recommendations update
+            r = Recommender()
+            r.products_bought([item.product for item in order.items.all()])
             return redirect("payment:done")
         else:
             return redirect("payment:canceled")
