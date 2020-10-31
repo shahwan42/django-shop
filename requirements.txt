@@ -1,9 +1,10 @@
-django
-Pillow
+django==3.0.*
+Pillow==7.0.0
 celery==4.4.2
 flower==0.9.3
 braintree==3.59.0
 WeasyPrint==51
 django-rosetta==0.9.3
+django-parler==2.0.1
 
 flake8-black
