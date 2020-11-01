@@ -202,8 +202,10 @@ PARLER_LANGUAGES = {
 }
 
 # redis
-REDIS_HOST = "localhost"
-REDIS_PORT = 6379
+REDIS_HOST = env("REDIS_HOST", str, "localhost")
+REDIS_PORT = env("REDIS_PORT", int, 6379)
+REDIS_USER = env("REDIS_USER", str, None)
+REDIS_PASSWORD = env("REDIS_PASSWORD", str, None)
 REDIS_DB = 1
 
 # Simplified static file serving.

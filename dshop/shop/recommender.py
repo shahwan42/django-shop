@@ -4,7 +4,10 @@ from .models import Product
 
 # connect to redis
 r = redis.Redis(
-    host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB
+    host=settings.REDIS_HOST,
+    port=settings.REDIS_PORT,
+    password=settings.REDIS_PASSWORD,
+    db=settings.REDIS_DB,
 )
 
 
