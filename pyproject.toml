@@ -20,6 +20,7 @@ django-environ = "^0.4.5"
 whitenoise = "^5.2.0"
 sentry-sdk = "^0.19.1"
 psycopg2-binary = "^2.8.6"
+gunicorn = "^20.0.4"
 
 [tool.poetry.dev-dependencies]
 flake8-black = "^0.2.1"
