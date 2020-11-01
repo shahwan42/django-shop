@@ -7,7 +7,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from cart.cart import Cart
+from dshop.cart.cart import Cart
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from .tasks import order_created

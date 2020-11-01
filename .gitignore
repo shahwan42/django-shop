@@ -145,3 +145,6 @@ media/
 
 # static files
 staticfiles/
+
+# db.json
+db.json

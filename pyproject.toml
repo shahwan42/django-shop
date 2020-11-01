@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "django-shop"
+version = "0.1.0"
+description = "An online retail system for small businesses"
+authors = ["Ahmed Shahwan <ahmed@shahwan.me>"]
+
+[tool.poetry.dependencies]
+python = "^3.8.6"
+Django = "3.0.*"
+Pillow = "7.0.0"
+celery = "4.4.2"
+flower = "0.9.3"
+braintree = "3.59.0"
+WeasyPrint = "51"
+django-rosetta = "0.9.3"
+django-parler = "2.0.1"
+django-localflavor = "3.0.1"
+redis = "3.4.1"
+
+[tool.poetry.dev-dependencies]
+flake8-black = "^0.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

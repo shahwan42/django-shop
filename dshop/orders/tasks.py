@@ -16,4 +16,4 @@ def order_created(order_id):
         f"You have successfully placed an order."
         f"Your order ID is {order.id}."
     )
-    return send_mail(subject, message, "admin@myshop.com", [order.email])
+    return send_mail(subject, message, "admin@django-shop.com", [order.email])
