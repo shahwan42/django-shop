@@ -12,25 +12,41 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import braintree
+import environ
+import sentry_sdk
 
 # from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# TODO migrate to Pathlib again and cast to str when necessary
 # BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# django-environ
+env = environ.Env(
+    # # set casting, default value
+    # DEBUG=(bool, False)
+)
+
+# Deploy NOTE defined first to decide when to read the .env file
+DEPLOY = env("DEPLOY", str, None)
+
+# reading .env file () when testing and in LOCAL env else read from env vars
+if not DEPLOY or DEPLOY == "LOCAL":
+    environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "x@m$w^z%xf$w18jy!!1n2#!(q!1#jf1d2m6&iivtt4o4jv0ab_"
+SECRET_KEY = env("DJANGO_SECRET_KEY", str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG", bool, False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env("ALLOWED_HOSTS", tuple, ("localhost", "127.0.0.1"))
 
 
 # Application definition
@@ -92,9 +108,18 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
         # "NAME": BASE_DIR / "db.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("POSTGRES_DB"),
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "HOST": env("POSTGRES_HOST"),
+        "PORT": env("POSTGRES_PORT"),
+        "TEST": {"NAME": "xshop_test_db"},
+        "CONN_MAX_AGE": 60 if DEPLOY != "LOCAL" else 0,
+        "ATOMIC_REQUESTS": True,
     }
 }
 
@@ -177,3 +202,18 @@ PARLER_LANGUAGES = {
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# sentry
+if DEPLOY and DEPLOY not in ("LOCAL", "TESTING"):
+    sentry_sdk.init(
+        dsn=env("SENTRY_DSN", str),
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True,
+    )

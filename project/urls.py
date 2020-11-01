@@ -20,6 +20,11 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy as _
 
+
+def trigger_error(request):
+    1 / 0
+
+
 urlpatterns = i18n_patterns(
     path(_("admin/"), admin.site.urls),
     path(_("cart/"), include("dshop.cart.urls", namespace="cart")),
@@ -27,6 +32,7 @@ urlpatterns = i18n_patterns(
     path(_("payment/"), include("dshop.payment.urls", namespace="payment")),
     path(_("coupons/"), include("dshop.coupons.urls", namespace="coupons")),
     path("rosetta/", include("rosetta.urls")),
+    path("sentry-debug/", trigger_error),
     path("", include("dshop.shop.urls", namespace="shop")),
 )
 

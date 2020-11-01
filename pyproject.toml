@@ -16,9 +16,14 @@ django-rosetta = "0.9.3"
 django-parler = "2.0.1"
 django-localflavor = "3.0.1"
 redis = "3.4.1"
+django-environ = "^0.4.5"
+whitenoise = "^5.2.0"
+sentry-sdk = "^0.19.1"
+psycopg2-binary = "^2.8.6"
 
 [tool.poetry.dev-dependencies]
 flake8-black = "^0.2.1"
+docker-compose = "^1.27.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
