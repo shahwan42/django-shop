@@ -1,8 +1,8 @@
 import braintree
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from orders.models import Order
-from shop.recommender import Recommender
+from dshop.orders.models import Order
+from dshop.shop.recommender import Recommender
 from .tasks import payment_completed
 
 

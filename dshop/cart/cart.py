@@ -1,10 +1,11 @@
 from decimal import Decimal
 from django.conf import settings
-from shop.models import Product
-from coupons.models import Coupon
+
+from dshop.shop.models import Product
+from dshop.coupons.models import Coupon
 
 
-class Cart(object):
+class Cart:
     def __init__(self, request):
         """
         Initialize the cart.

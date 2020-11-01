@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.conf import settings
 
-from orders.models import Order
+from dshop.orders.models import Order
 
 
 @task

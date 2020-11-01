@@ -47,11 +47,11 @@ INSTALLED_APPS = [
     "parler",
     "localflavor",
     # Local apps
-    "shop.apps.ShopConfig",
-    "cart.apps.CartConfig",
-    "orders.apps.OrdersConfig",
-    "payment.apps.PaymentConfig",
-    "coupons.apps.CouponsConfig",
+    "dshop.shop.apps.ShopConfig",
+    "dshop.cart.apps.CartConfig",
+    "dshop.orders.apps.OrdersConfig",
+    "dshop.payment.apps.PaymentConfig",
+    "dshop.coupons.apps.CouponsConfig",
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "cart.context_processors.cart",
+                "dshop.cart.context_processors.cart",
             ],
         },
     },
