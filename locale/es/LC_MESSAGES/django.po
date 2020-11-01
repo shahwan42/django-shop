@@ -86,31 +86,31 @@ msgstr "Comprar"
 msgid "Coupon"
 msgstr "Cupón"
 
-#: myshop/settings.py:114
+#: project/settings.py:114
 msgid "English"
 msgstr "Inglés"
 
-#: myshop/settings.py:115
+#: project/settings.py:115
 msgid "Spanish"
 msgstr "Español"
 
-#: myshop/urls.py:24
+#: project/urls.py:24
 msgid "admin/"
 msgstr "admin/"
 
-#: myshop/urls.py:25
+#: project/urls.py:25
 msgid "cart/"
 msgstr "carro/"
 
-#: myshop/urls.py:26
+#: project/urls.py:26
 msgid "orders/"
 msgstr "pedidos/"
 
-#: myshop/urls.py:27
+#: project/urls.py:27
 msgid "payment/"
 msgstr "pago/"
 
-#: myshop/urls.py:28
+#: project/urls.py:28
 #| msgid "Coupon"
 msgid "coupons/"
 msgstr "cupones/"
